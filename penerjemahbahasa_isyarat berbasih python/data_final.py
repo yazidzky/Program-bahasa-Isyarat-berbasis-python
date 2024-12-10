@@ -38,7 +38,6 @@ while True:
             if handz:
                 hand = handz[0]
                 pts = hand['lmList']
-                # x1,y1,w1,h1=hand['bbox']
                 os=((400-w)//2)-15
                 os1=((400-h)//2)-15
                 for t in range(0,4,1):
