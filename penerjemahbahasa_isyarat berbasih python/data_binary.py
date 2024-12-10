@@ -15,7 +15,6 @@ hd = HandDetector(maxHands=1)
 hd2 = HandDetector(maxHands=1)
 
 
-#testing data
 count = len(os.listdir("D://test_data_2.0//Gray_imgs//A"))
 
 
@@ -41,27 +40,17 @@ while True:
             hand = hands[0]
             x, y, w, h = hand['bbox']
             image = frame[y - offset:y + h + offset, x - offset:x + w + offset]
-            #image1 = imgg[y - offset:y + h + offset, x - offset:x + w + offset]
-
-
-
-            roi = image     #rgb image without drawing
-           # roi1 = image1   #rdb image with drawing
-
-
-
-            # #for simple gray image without draw
+          
+            roi = image     
+            
             gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
             blur = cv2.GaussianBlur(gray, (1, 1), 2)
-            #
-
-            # #for binary image
+            
             gray2 = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
             blur2 = cv2.GaussianBlur(gray2, (5, 5), 2)
             th3 = cv2.adaptiveThreshold(blur2, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 11, 2)
             ret, test_image = cv2.threshold(th3, 27, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-            #
-            #
+            
             test_image1=blur
             img_final1 = np.ones((400, 400), np.uint8) * 148
             h = test_image1.shape[0]
@@ -124,7 +113,6 @@ while True:
                     cv2.circle(white, (pts[i][0] + os, pts[i][1] + os1), 2, (0, 0, 255), 1)
 
                 cv2.imshow("skeleton", white)
-                # cv2.imshow("5", skeleton5)
             hands = hd.findHands(white, draw=False, flipType=True)
             if hands:
                 hand = hands[0]
@@ -133,9 +121,8 @@ while True:
 
             image1 = frame[y - offset:y + h + offset, x - offset:x + w + offset]
 
-            roi1 = image1   #rdb image with drawing
+            roi1 = image1   
 
-            #for gray image with drawings
             gray1 = cv2.cvtColor(roi1, cv2.COLOR_BGR2GRAY)
             blur1 = cv2.GaussianBlur(gray1, (1, 1), 2)
 
@@ -146,34 +133,8 @@ while True:
             w = test_image2.shape[1]
             img_final2[((400 - h) // 2):((400 - h) // 2) + h, ((400 - w) // 2):((400 - w) // 2) + w] = test_image2
 
-
-            #cv2.imshow("aaa",white)
-            # cv2.imshow("gray",img_final2)
             cv2.imshow("binary", img_final)
-            # cv2.imshow("gray w/o draw", img_final1)
-
-
-
-            # img = img_final.reshape(1, 400, 400, 1)
-            # # print(model.predict(img))
-            # prob = np.array(model.predict(img)[0], dtype='float32')
-            # ch1 = np.argmax(prob, axis=0)
-            # prob[ch1] = 0
-            # ch2 = np.argmax(prob, axis=0)
-            # prob[ch2] = 0
-            # ch3 = np.argmax(prob, axis=0)
-            # prob[ch3] = 0
-            # ch1 = chr(ch1 + 65)
-            # ch2 = chr(ch2 + 65)
-            # ch3 = chr(ch3 + 65)
-            # frame = cv2.putText(frame, "Predicted " + ch1 + " " + ch2 + " " + ch3, (x - offset - 150, y - offset - 10),
-            #                     cv2.FONT_HERSHEY_SIMPLEX,
-            #                     1, (255, 0, 0), 1, cv2.LINE_AA)
-
-            #cv2.rectangle(frame, (x - offset, y - offset), (x + w, y + h), (3, 255, 25), 3)
-        # frame = cv2.putText(frame, "dir=" + c_dir + "  count=" + str(count), (50,50),
-        #                     cv2.FONT_HERSHEY_SIMPLEX,
-        #                     1, (255, 0, 0), 1, cv2.LINE_AA)
+            
         cv2.imshow("frame", frame)
         interrupt = cv2.waitKey(1)
         if interrupt & 0xFF == 27:
@@ -186,10 +147,7 @@ while True:
                 p_dir="A"
                 c_dir="a"
             flag = False
-            # #training data
-            # count = len(os.listdir("D://sign2text_dataset_2.0/Binary_imgs//" + p_dir + "//"))
 
-            # test data
             count = len(os.listdir("D://test_data_2.0/Gray_imgs//" + p_dir + "//"))
 
         if interrupt & 0xFF == ord('a'):
@@ -205,14 +163,7 @@ while True:
             if suv==50:
                 flag=False
             if step%2==0:
-                # #this is for training data collection
-                # cv2.imwrite("D:\\sign2text_dataset_2.0\\Binary_imgs\\" + p_dir + "\\" + c_dir + str(count) + ".jpg", img_final)
-                # cv2.imwrite("D:\\sign2text_dataset_2.0\\Gray_imgs\\" + p_dir + "\\" + c_dir + str(count) + ".jpg", img_final1)
-                # cv2.imwrite("D:\\sign2text_dataset_2.0\\Gray_imgs_with_drawing\\" + p_dir + "\\" + c_dir + str(count) + ".jpg", img_final2)
 
-                # this is for testing data collection
-                # cv2.imwrite("D:\\test_data_2.0\\Binary_imgs\\" + p_dir + "\\" + c_dir + str(count) + ".jpg",
-                #             img_final)
                 cv2.imwrite("D:\\test_data_2.0\\Gray_imgs\\" + p_dir + "\\" + c_dir + str(count) + ".jpg",
                             img_final1)
                 cv2.imwrite(
