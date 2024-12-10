@@ -22,7 +22,6 @@ offset=29
 os.environ["THEANO_FLAGS"] = "device=cuda, assert_no_cpu_op=True"
 
 
-# Application :
 
 class Application:
 
@@ -144,7 +143,6 @@ class Application:
                     image = cv2image_copy[y - offset:y + h + offset, x - offset:x + w + offset]
 
                     white = cv2.imread("white.jpg")
-                    # img_final=img_final1=img_final2=0
                     if image.all:
                         handz = hd2.findHands(image, draw=False, flipType=True)
                         self.ccc += 1
@@ -152,7 +150,6 @@ class Application:
                             hand = handz[0]
                             handmap=hand[0]
                             self.pts = handmap['lmList']
-                            # x1,y1,w1,h1=hand['bbox']
 
                             os = ((400 - w) // 2) - 15
                             os1 = ((400 - h) // 2) - 15
@@ -197,10 +194,6 @@ class Application:
 
                             self.panel3.config(text=self.current_symbol, font=("Courier", 30))
 
-                            #self.panel4.config(text=self.word, font=("Courier", 30))
-
-
-
                             self.b1.config(text=self.word1, font=("Courier", 20), wraplength=825, command=self.action1)
                             self.b2.config(text=self.word2, font=("Courier", 20), wraplength=825,  command=self.action2)
                             self.b3.config(text=self.word3, font=("Courier", 20), wraplength=825,  command=self.action3)
@@ -218,13 +211,11 @@ class Application:
             self.panel.config(image=imgtk)
 
             if hands:
-                # #print(" --------- lmlist=",hands[1])
                 hand = hands[0]
                 x, y, w, h = hand['bbox']
                 image = cv2image_copy[y - offset:y + h + offset, x - offset:x + w + offset]
 
-                white = cv2.imread("C:\\Users\\devansh raval\\PycharmProjects\\pythonProject\\white.jpg")
-                # img_final=img_final1=img_final2=0
+                white = cv2.imread("white.jpg")
 
                 handz = hd2.findHands(image, draw=False, flipType=True)
                 print(" ", self.ccc)
@@ -232,7 +223,6 @@ class Application:
                 if handz:
                     hand = handz[0]
                     self.pts = hand['lmList']
-                    # x1,y1,w1,h1=hand['bbox']
 
                     os = ((400 - w) // 2) - 15
                     os1 = ((400 - h) // 2) - 15
@@ -277,9 +267,6 @@ class Application:
 
                     self.panel3.config(text=self.current_symbol, font=("Courier", 30))
 
-                    #self.panel4.config(text=self.word, font=("Courier", 30))
-
-
 
                     self.b1.config(text=self.word1, font=("Courier", 20), wraplength=825, command=self.action1)
                     self.b2.config(text=self.word2, font=("Courier", 20), wraplength=825,  command=self.action2)
@@ -309,7 +296,6 @@ class Application:
         last_idx = len(self.str)
         self.str=self.str[:idx_word]
         self.str=self.str+self.word2.upper()
-        #self.str[idx_word:last_idx] = self.word2
 
 
     def action3(self):
@@ -354,7 +340,6 @@ class Application:
 
         pl = [ch1, ch2]
 
-        # condition for [Aemnst]
         l = [[5, 2], [5, 3], [3, 5], [3, 6], [3, 0], [3, 2], [6, 4], [6, 1], [6, 2], [6, 6], [6, 7], [6, 0], [6, 5],
              [4, 1], [1, 0], [1, 1], [6, 3], [1, 6], [5, 6], [5, 1], [4, 5], [1, 4], [1, 5], [2, 0], [2, 6], [4, 6],
              [1, 0], [5, 7], [1, 6], [6, 1], [7, 6], [2, 5], [7, 1], [5, 4], [7, 0], [7, 5], [7, 2]]
@@ -363,15 +348,12 @@ class Application:
                 1]):
                 ch1 = 0
 
-        # condition for [o][s]
         l = [[2, 2], [2, 1]]
         if pl in l:
             if (self.pts[5][0] < self.pts[4][0]):
                 ch1 = 0
                 print("++++++++++++++++++")
-                # print("00000")
 
-        # condition for [c0][aemnst]
         l = [[0, 0], [0, 6], [0, 2], [0, 5], [0, 1], [0, 7], [5, 2], [7, 6], [7, 1]]
         pl = [ch1, ch2]
         if pl in l:
@@ -379,15 +361,12 @@ class Application:
                 0] and self.pts[0][0] > self.pts[20][0]) and self.pts[5][0] > self.pts[4][0]:
                 ch1 = 2
 
-        # condition for [c0][aemnst]
         l = [[6, 0], [6, 6], [6, 2]]
         pl = [ch1, ch2]
         if pl in l:
             if self.distance(self.pts[8], self.pts[16]) < 52:
                 ch1 = 2
 
-
-        # condition for [gh][bdfikruvw]
         l = [[1, 4], [1, 5], [1, 6], [1, 3], [1, 0]]
         pl = [ch1, ch2]
 
