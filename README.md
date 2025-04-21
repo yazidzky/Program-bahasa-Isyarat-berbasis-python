@@ -249,7 +249,7 @@ Terdapat beberapa modul utama dalam proyek ini:
 
 ---
 
-### 2. Penjelasan Kode Tiap Baris (Contoh: `data_binary.py`)
+### Penjelasan Kode Tiap Baris (Contoh: `data_binary.py`)
 
 ```python
 capture = cv2.VideoCapture(0)  # Mengaktifkan webcam
@@ -286,7 +286,7 @@ Kode lainnya memiliki struktur dan fungsi serupa, hanya dengan tambahan logika k
 
 ---
 
-### 3. Analogi Sederhana Algoritma
+### Analogi Sederhana Algoritma
 
 Bayangkan kamu sedang main tebak huruf dengan teman. Temanmu membentuk huruf dengan tangan, kamu melihat posisi jari-jari mereka, menggambar ulang bentuk tangan mereka, lalu mencoba menebak huruf apa itu berdasarkan contoh-contoh yang pernah kamu pelajari sebelumnya.
 
@@ -299,7 +299,7 @@ Begitu juga sistem ini:
 
 ---
 
-### 4. Cara Penggunaan
+### Cara Penggunaan
 
 1. **Persiapan**
    - Pastikan semua dependency sudah terinstal, seperti:
@@ -339,7 +339,7 @@ Begitu juga sistem ini:
 
 ---
 
-### 5. Kesimpulan
+### Kesimpulan
 
 Proyek ini merupakan implementasi nyata dari penggabungan *Computer Vision*, *Machine Learning*, dan *GUI* untuk menyelesaikan masalah nyata: membantu komunikasi bahasa isyarat. 
 
