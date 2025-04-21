@@ -162,6 +162,7 @@ Seluruh alfabet [a-z] dibagi ke dalam 8 kelas utama, di mana setiap kelas berisi
 Gamabar 1:
 
 o	Alfabet ini memiliki kemiripan pola dengan isyarat menggunakan ibu jari dan jari kelingking.
+
 2.	[c, o]
 
  ![image](https://github.com/user-attachments/assets/f46a1034-9ac9-4091-9f1a-308bfa865ac1)
@@ -169,6 +170,7 @@ o	Alfabet ini memiliki kemiripan pola dengan isyarat menggunakan ibu jari dan ja
 Gambar 2:
 
 o	Alfabet ini memiliki pola melingkar pada gestur tangan.
+
 3.	[g, h]
 
  ![image](https://github.com/user-attachments/assets/a3257b70-15be-46f8-93de-9b1004cc82da)
@@ -176,6 +178,7 @@ o	Alfabet ini memiliki pola melingkar pada gestur tangan.
 Gambar 3:
 
 o	Isyarat tangan untuk alfabet ini melibatkan posisi jari telunjuk dan jari tengah yang menyerupai garis lurus.
+
 4.	[b, d, f, i, u, v, k, r, w]
 
  ![image](https://github.com/user-attachments/assets/e278e493-54bc-448c-b4c5-10c3ac398f0a)
@@ -183,13 +186,17 @@ o	Isyarat tangan untuk alfabet ini melibatkan posisi jari telunjuk dan jari teng
 Gambar 4:
 
 o	Alfabet dalam kelas ini memiliki pola beragam tetapi cenderung melibatkan kombinasi jari yang terpisah atau membentuk pola "V".
+
 5.	[p, q, z]
+
  ![image](https://github.com/user-attachments/assets/2daa795b-dabe-4ad8-9e45-e86e06f3956e)
 
 Gambar 5:
 
 o	Isyarat tangan dalam kelas ini umumnya melibatkan jari-jari membentuk pola lengkungan ke bawah atau silang.
+
 6.	[a, e, m, n, s, t]
+
  ![image](https://github.com/user-attachments/assets/52852d18-04f3-4cf8-a98b-3ec48b30a1da)
 
 Gambar 6:
