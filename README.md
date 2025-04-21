@@ -160,34 +160,40 @@ Seluruh alfabet [a-z] dibagi ke dalam 8 kelas utama, di mana setiap kelas berisi
  ![image](https://github.com/user-attachments/assets/b90e5cc3-830f-41cd-ba68-8d339256eba7)
 
 Gamabar 1:
+
 o	Alfabet ini memiliki kemiripan pola dengan isyarat menggunakan ibu jari dan jari kelingking.
 2.	[c, o]
 
  ![image](https://github.com/user-attachments/assets/f46a1034-9ac9-4091-9f1a-308bfa865ac1)
 
 Gambar 2:
+
 o	Alfabet ini memiliki pola melingkar pada gestur tangan.
 3.	[g, h]
 
  ![image](https://github.com/user-attachments/assets/a3257b70-15be-46f8-93de-9b1004cc82da)
 
 Gambar 3:
+
 o	Isyarat tangan untuk alfabet ini melibatkan posisi jari telunjuk dan jari tengah yang menyerupai garis lurus.
 4.	[b, d, f, i, u, v, k, r, w]
 
  ![image](https://github.com/user-attachments/assets/e278e493-54bc-448c-b4c5-10c3ac398f0a)
 
 Gambar 4:
+
 o	Alfabet dalam kelas ini memiliki pola beragam tetapi cenderung melibatkan kombinasi jari yang terpisah atau membentuk pola "V".
 5.	[p, q, z]
  ![image](https://github.com/user-attachments/assets/2daa795b-dabe-4ad8-9e45-e86e06f3956e)
 
 Gambar 5:
+
 o	Isyarat tangan dalam kelas ini umumnya melibatkan jari-jari membentuk pola lengkungan ke bawah atau silang.
 6.	[a, e, m, n, s, t]
  ![image](https://github.com/user-attachments/assets/52852d18-04f3-4cf8-a98b-3ec48b30a1da)
 
 Gambar 6:
+
 o	Kelas ini terdiri dari alfabet dengan pola tangan yang lebih kompleks tetapi memiliki fitur serupa, seperti posisi jari tertutup.
 
 ## Proses Prediksi dan Klasifikasi
@@ -231,50 +237,121 @@ Next Functionality (Gambar 3)
 Sistem mendeteksi gestur tangan yang menandakan aksi "Next".
 Fungsi ini memungkinkan pengguna untuk menyelesaikan proses prediksi huruf dan melanjutkan ke tahapan berikutnya. Sistem terus memperbarui kalimat sesuai dengan huruf yang telah dikenali.
 
-Proses Implementasi
+## Proses Implementasi
 
-Penggunaan CNN
-1.	CNN digunakan untuk memproses gambar tangan pengguna, mengekstraksi fitur visual, dan mengenali gerakan tangan. Model dilatih menggunakan dataset gambar tangan dengan berbagai latar belakang dan kondisi pencahayaan untuk memastikan akurasi tinggi dalam lingkungan yang berbeda.
+Proyek ini bertujuan untuk menerjemahkan bahasa isyarat tangan (Alphabet A-Z) ke dalam teks menggunakan *Computer Vision* dan *Deep Learning*. Sistem ini menggunakan kamera untuk menangkap gambar tangan, mendeteksi posisi jari, membentuk *skeleton* tangan, lalu memprediksi huruf berdasarkan model CNN yang telah dilatih.
 
-2.	Pengembangan GUI
-GUI dirancang menggunakan Python Tkinter untuk memberikan antarmuka yang intuitif bagi pengguna. Komponen yang diimplementasikan meliputi:
+Terdapat beberapa modul utama dalam proyek ini:
+- `data_binary.py`: Mengambil citra tangan dan mengolahnya menjadi format biner atau grayscale.
+- `data_final.py`: Menangkap skeleton tangan dan menyimpannya ke dalam dataset.
+- `prediksi.py`: Memprediksi huruf dari gestur tangan secara real-time menggunakan model CNN.
+- `utama.py` dan `tempCodeRunnerFile.py`: Antarmuka GUI untuk menampilkan hasil prediksi dan menyusun kalimat dari hasil huruf-huruf prediksi.
 
-•	Tampilan live feed dari kamera.
-•	Area hasil prediksi yang menampilkan huruf dan kalimat.
-•	Tombol untuk aksi seperti "Hapus" dan pilihan saran huruf.
+---
 
-Hasil Pengujian
-Sistem berhasil mengenali huruf alfabet dan beberapa fungsi tambahan seperti "Backspace" dan "Next" dengan akurasi hingga 97%.
-Pada kondisi pencahayaan yang optimal dan latar belakang yang bersih, akurasi meningkat hingga 99%.
-GUI membantu membuat proses prediksi lebih mulus dengan saran huruf alternatif yang memungkinkan pengguna untuk melakukan koreksi secara manual jika diperlukan.
+### 2. Penjelasan Kode Tiap Baris (Contoh: `data_binary.py`)
 
-Penjelasan Tombol "Hapus" dan "Perkiraan"
-Pada implementasi sistem penerjemah bahasa isyarat tangan ini, dua fitur penting ditambahkan untuk meningkatkan kemudahan penggunaan, yaitu tombol "Hapus" dan bagian "Perkiraan".
-1. Tombol "Hapus"
-Fungsi:
-Tombol ini dirancang untuk menghapus seluruh kalimat yang sedang ditampilkan.
-•	Ketika pengguna merasa bahwa hasil prediksi huruf atau kalimat tidak sesuai, mereka dapat menggunakan tombol ini untuk menghapus semua teks yang telah terakumulasi.
-•	Tombol ini memberikan kemudahan untuk memulai proses prediksi dari awal tanpa harus menutup atau me-restart aplikasi.
-Cara Kerja:
-•	Saat tombol ditekan, program mengosongkan variabel atau buffer tempat kalimat sementara disimpan.
-•	Setelah penghapusan, area Kalimat dalam GUI akan kosong, memberikan ruang bagi pengguna untuk memulai kembali proses prediksi.
-2. Bagian "Perkiraan"
-Fungsi:
-Bagian ini menampilkan saran huruf lain berdasarkan hasil analisis model CNN.
-•	Karena model tidak selalu 100% akurat, terutama jika gestur tangan ambigu atau tidak jelas, fitur "Perkiraan" memberikan opsi tambahan kepada pengguna.
-•	Saran ini memungkinkan pengguna untuk memilih huruf yang mereka maksud jika prediksi utama kurang tepat.
-Cara Kerja:
-•	Model CNN menghasilkan daftar kemungkinan huruf berdasarkan probabilitas prediksi.
-•	Huruf dengan probabilitas tertinggi ditampilkan di bagian Huruf, sedangkan beberapa opsi lain dengan probabilitas tinggi ditampilkan di bagian Perkiraan.
-•	Pengguna dapat memilih salah satu opsi dari Perkiraan untuk mengganti huruf yang ditampilkan.
-Contoh Kasus: Jika pengguna menunjukkan gestur untuk huruf "Y", tetapi sistem salah mengenali sebagai "V", huruf "Y" mungkin muncul di daftar Perkiraan. Pengguna cukup mengklik huruf "Y" untuk memperbaiki hasil.
-Manfaat Kedua Fitur Ini
-1.	Tombol "Hapus":
-o	Membantu memperbaiki keseluruhan teks dengan cepat tanpa perlu proses manual yang memakan waktu.
-o	Memudahkan pengguna untuk memulai ulang jika terjadi kesalahan.
-2.	Bagian "Perkiraan":
-o	Memberikan fleksibilitas kepada pengguna untuk mengatasi kesalahan prediksi model.
-o	Meningkatkan pengalaman pengguna dengan memberikan opsi koreksi langsung.
-Fitur ini menambah nilai praktis pada sistem, memastikan bahwa pengguna mendapatkan hasil yang sesuai dengan harapan mereka, terlepas dari kondisi pencahayaan atau latar belakang yang mungkin memengaruhi akurasi prediksi.
+```python
+capture = cv2.VideoCapture(0)  # Mengaktifkan webcam
+hd = HandDetector(maxHands=1)  # Inisialisasi detektor tangan dari cvzone
+```
 
+```python
+hands = hd.findHands(frame, draw=False, flipType=True)  # Mendeteksi tangan
+if hands:
+    hand = hands[0]
+    x, y, w, h = hand['bbox']  # Mendapatkan koordinat bounding box tangan
+```
+
+```python
+gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)  # Mengubah gambar ke grayscale
+blur = cv2.GaussianBlur(gray, (1, 1), 2)  # Menghaluskan noise gambar
+```
+
+```python
+th3 = cv2.adaptiveThreshold(..., cv2.THRESH_BINARY_INV, ...)  # Konversi ke biner
+```
+
+```python
+img_final = np.ones((400, 400), np.uint8) * 255
+img_final[((400 - h) // 2):...+h, ((400 - w) // 2):...+w] = test_image
+# Menempatkan gambar hasil threshold ke dalam canvas putih 400x400
+```
+
+```python
+cv2.imshow("binary", img_final)  # Menampilkan hasil akhir di window
+```
+
+Kode lainnya memiliki struktur dan fungsi serupa, hanya dengan tambahan logika klasifikasi dan GUI.
+
+---
+
+### 3. Analogi Sederhana Algoritma
+
+Bayangkan kamu sedang main tebak huruf dengan teman. Temanmu membentuk huruf dengan tangan, kamu melihat posisi jari-jari mereka, menggambar ulang bentuk tangan mereka, lalu mencoba menebak huruf apa itu berdasarkan contoh-contoh yang pernah kamu pelajari sebelumnya.
+
+Begitu juga sistem ini:
+- Melihat posisi jari (deteksi tangan)
+- Menggambar ulang dalam bentuk skeleton (cv2 line & circle)
+- Memasukkan ke "otak" (model CNN)
+- Menebak hurufnya (klasifikasi)
+- Lalu menampilkan hasilnya ke layar
+
+---
+
+### 4. Cara Penggunaan
+
+1. **Persiapan**
+   - Pastikan semua dependency sudah terinstal, seperti:
+     ```bash
+     pip install opencv-python cvzone keras numpy pyttsx3 pillow enchant
+     ```
+   - Siapkan file model CNN (`cnn8grps_rad1_model.h5`) di direktori yang sama.
+
+2. **Menjalankan Program**
+   - Untuk mengumpulkan data:
+     ```bash
+     python data_final.py
+     ```
+     Tekan `a` untuk mulai menyimpan data dan `n` untuk pindah ke huruf berikutnya.
+
+   - Untuk melihat preprocessing citra:
+     ```bash
+     python data_binary.py
+     ```
+
+   - Untuk menjalankan prediksi secara real-time:
+     ```bash
+     python prediksi.py
+     ```
+
+   - Untuk membuka GUI penerjemah:
+     ```bash
+     python utama.py
+     ```
+
+3. **Navigasi di GUI**
+   - Kamera akan otomatis mendeteksi tangan.
+   - Huruf hasil prediksi akan tampil di bawah label "Huruf".
+   - Kalimat akan disusun otomatis.
+   - Tersedia tombol koreksi hasil prediksi (kata yang disarankan).
+   - Tombol "Hapus" untuk mengosongkan kalimat.
+
+---
+
+### 5. Kesimpulan
+
+Proyek ini merupakan implementasi nyata dari penggabungan *Computer Vision*, *Machine Learning*, dan *GUI* untuk menyelesaikan masalah nyata: membantu komunikasi bahasa isyarat. 
+
+Dengan struktur modular:
+- `data_binary.py` → preprocessing data
+- `data_final.py` → dataset builder
+- `prediksi.py` → real-time prediction
+- `utama.py` → aplikasi GUI
+
+Proyek ini bisa dikembangkan lebih lanjut ke bahasa isyarat penuh, voice output, atau penerjemahan kalimat penuh. Cocok untuk digunakan dalam pendidikan, inklusi disabilitas, dan komunikasi.
+
+---
+
+> Untuk dokumentasi lebih mendetail tiap file, kamu bisa buat README terpisah atau dokumentasi inline (komentar dalam kode).
 
