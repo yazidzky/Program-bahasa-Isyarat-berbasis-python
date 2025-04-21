@@ -1,11 +1,11 @@
-## Proyek: Penerjemah Bahasa Isyarat Tangan
+# Proyek: Penerjemah Bahasa Isyarat Tangan
 
-# 1.	Pendahuluan
+## 1.	Pendahuluan
 Deteksi gerakan tangan adalah salah satu penerapan computer vision yang semakin populer dalam berbagai bidang. Teknologi ini digunakan untuk menciptakan antarmuka pengguna yang lebih alami, mengendalikan perangkat melalui isyarat tangan, hingga membantu pengembangan teknologi assistive bagi penyandang disabilitas. Di sini, deteksi gestur tangan berbasis kamera memegang peranan penting dalam mengenali pola gerakan tangan dan menerjemahkannya menjadi perintah yang dipahami oleh sistem.
 
 Finite State Automata (FSA) dapat digunakan sebagai model dalam sistem deteksi gerakan tangan untuk mengatur alur proses dari inisialisasi hingga pengenalan gestur. FSA bekerja dengan cara berpindah dari satu state ke state lainnya berdasarkan input yang diterima, seperti hasil deteksi jari atau perintah untuk menghentikan program. Artikel ini akan menjelaskan analisis kebutuhan, proses pengumpulan data, dan studi literatur yang terkait dengan penggunaan FSA dalam sistem deteksi gerakan tangan berbasis kamera.
 
-2.	Analisis Kebutuhan dan Pengumpulan Data
+## 2.	Analisis Kebutuhan dan Pengumpulan Data
 
 2.1	Analisis Kebutuhan
 
@@ -110,6 +110,7 @@ Berikut adalah representasi visual dari FSA untuk sistem deteksi gerakan tangan:
 ![image](https://github.com/user-attachments/assets/847c8507-c50f-4260-ae4d-93fe7f722532)
 
 Dalam bentuk Diagram state:
+
 ![image](https://github.com/user-attachments/assets/b183fe8e-a90b-4fc4-b209-e0be0e0719a2)
 
 
