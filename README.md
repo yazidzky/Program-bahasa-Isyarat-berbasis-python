@@ -1,4 +1,4 @@
-Proyek: Penerjemah Bahasa Isyarat Tangan
+#Proyek: Penerjemah Bahasa Isyarat Tangan
 
 1.	Pendahuluan
 Deteksi gerakan tangan adalah salah satu penerapan computer vision yang semakin populer dalam berbagai bidang. Teknologi ini digunakan untuk menciptakan antarmuka pengguna yang lebih alami, mengendalikan perangkat melalui isyarat tangan, hingga membantu pengembangan teknologi assistive bagi penyandang disabilitas. Di sini, deteksi gestur tangan berbasis kamera memegang peranan penting dalam mengenali pola gerakan tangan dan menerjemahkannya menjadi perintah yang dipahami oleh sistem.
