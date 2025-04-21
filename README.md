@@ -1,19 +1,6 @@
+Proyek: Penerjemah Bahasa Isyarat Tangan
 
-
-
-#Abstrak
-
-Bahasa isyarat merupakan metode komunikasi yang sangat penting bagi komunitas tunarungu dan tunawicara. Dengan kemajuan teknologi dalam bidang computer vision dan machine learning, telah muncul potensi untuk mengembangkan sistem penerjemah bahasa isyarat secara real-time menggunakan sensor kamera. Artikel ini mengeksplorasi penggunaan Python untuk menerjemahkan gerakan jari dalam bahasa isyarat melalui sensor kamera, dengan berfokus pada analisis kebutuhan, pengumpulan data, studi literatur, serta implementasi Finite State Automata (FSA). Pada analisis kebutuhan, perangkat keras, perangkat lunak, dan dataset diidentifikasi untuk membangun sistem. Studi literatur membahas teknik pengolahan citra, metode klasifikasi, serta teknik pengenalan gerakan yang relevan dengan bahasa isyarat. Artikel ini juga mengusulkan rancangan FSA untuk memodelkan transisi antar gerakan dalam sistem penerjemah bahasa isyarat.
-Kata-kata Kunci: Bahasa isyarat, computer vision, machine learning, Python, sensor kamera
- 
-Abstract
-
-Sign language is a vital communication method for the deaf and mute communities. With advancements in technology, particularly in the fields of computer vision and machine learning, there is potential to develop a real-time sign language translation system using camera sensors. This article explores the use of Python to translate finger movements in sign language via camera sensors, focusing on needs analysis, data collection, literature review, and the implementation of Finite State Automata (FSA). In the needs analysis, hardware, software, and datasets are identified to build the system. The literature review discusses image processing techniques, classification methods, and gesture recognition techniques relevant to sign language. The article also proposes an FSA design to model transitions between gestures in the sign language translation system.
-
-Keywords: Sign language, computer vision, machine learning, Python, camera sensors
- 
 1.	Pendahuluan
-
 Deteksi gerakan tangan adalah salah satu penerapan computer vision yang semakin populer dalam berbagai bidang. Teknologi ini digunakan untuk menciptakan antarmuka pengguna yang lebih alami, mengendalikan perangkat melalui isyarat tangan, hingga membantu pengembangan teknologi assistive bagi penyandang disabilitas. Di sini, deteksi gestur tangan berbasis kamera memegang peranan penting dalam mengenali pola gerakan tangan dan menerjemahkannya menjadi perintah yang dipahami oleh sistem.
 
 Finite State Automata (FSA) dapat digunakan sebagai model dalam sistem deteksi gerakan tangan untuk mengatur alur proses dari inisialisasi hingga pengenalan gestur. FSA bekerja dengan cara berpindah dari satu state ke state lainnya berdasarkan input yang diterima, seperti hasil deteksi jari atau perintah untuk menghentikan program. Artikel ini akan menjelaskan analisis kebutuhan, proses pengumpulan data, dan studi literatur yang terkait dengan penggunaan FSA dalam sistem deteksi gerakan tangan berbasis kamera.
@@ -119,9 +106,11 @@ Finite State Automata (FSA) bisa digunakan untuk memodelkan transisi antar prose
 4.3	Implementasi FSA
 
 Berikut adalah representasi visual dari FSA untuk sistem deteksi gerakan tangan: Dalam bentuk Flowchart:
- 
-Dalam bentuk Diagram state:
 
+![image](https://github.com/user-attachments/assets/847c8507-c50f-4260-ae4d-93fe7f722532)
+
+Dalam bentuk Diagram state:
+![image](https://github.com/user-attachments/assets/b183fe8e-a90b-4fc4-b209-e0be0e0719a2)
 
 
 
@@ -166,27 +155,33 @@ Dalam pengembangan sistem pengenalan bahasa isyarat tangan, tantangan utama adal
 Pembagian Kelas Alfabet
 Seluruh alfabet [a-z] dibagi ke dalam 8 kelas utama, di mana setiap kelas berisi alfabet yang memiliki pola isyarat tangan serupa. Berikut adalah rincian pembagian kelas:
 1.	[y, j]
- 
+ ![image](https://github.com/user-attachments/assets/b90e5cc3-830f-41cd-ba68-8d339256eba7)
+
 Gamabar 1:
 o	Alfabet ini memiliki kemiripan pola dengan isyarat menggunakan ibu jari dan jari kelingking.
 2.	[c, o]
- 
+ ![image](https://github.com/user-attachments/assets/f46a1034-9ac9-4091-9f1a-308bfa865ac1)
+
 Gambar 2:
 o	Alfabet ini memiliki pola melingkar pada gestur tangan.
 3.	[g, h]
- 
+ ![image](https://github.com/user-attachments/assets/a3257b70-15be-46f8-93de-9b1004cc82da)
+
 Gambar 3:
 o	Isyarat tangan untuk alfabet ini melibatkan posisi jari telunjuk dan jari tengah yang menyerupai garis lurus.
 4.	[b, d, f, i, u, v, k, r, w]
- 
+ ![image](https://github.com/user-attachments/assets/e278e493-54bc-448c-b4c5-10c3ac398f0a)
+
 Gambar 4:
 o	Alfabet dalam kelas ini memiliki pola beragam tetapi cenderung melibatkan kombinasi jari yang terpisah atau membentuk pola "V".
 5.	[p, q, z]
- 
+ ![image](https://github.com/user-attachments/assets/2daa795b-dabe-4ad8-9e45-e86e06f3956e)
+
 Gambar 5:
 o	Isyarat tangan dalam kelas ini umumnya melibatkan jari-jari membentuk pola lengkungan ke bawah atau silang.
 6.	[a, e, m, n, s, t]
- 
+ ![image](https://github.com/user-attachments/assets/52852d18-04f3-4cf8-a98b-3ec48b30a1da)
+
 Gambar 6:
 o	Kelas ini terdiri dari alfabet dengan pola tangan yang lebih kompleks tetapi memiliki fitur serupa, seperti posisi jari tertutup.
 Proses Prediksi dan Klasifikasi
@@ -206,21 +201,23 @@ o	Klasifikasi lanjutan menggunakan operasi matematis meningkatkan presisi predik
 3.	Skalabilitas:
 Strategi ini memungkinkan integrasi lebih mudah dengan fitur atau bahasa isyarat lainnya, karena model hanya perlu menyesuaikan kelompok besar tanpa perlu merancang ulang seluruh sistem.
 Fungsi dan Hasil Implementasi
- ![image](https://github.com/user-attachments/assets/a46887fc-5576-40f7-8b48-a7b1ebc3340e)
+![image](https://github.com/user-attachments/assets/a46887fc-5576-40f7-8b48-a7b1ebc3340e)
 
 Backspace Functionality (Gambar 1)
 
 Pengguna menunjukkan gerakan tangan yang diprogram untuk melakukan aksi "Backspace".
 Sistem mengenali gerakan dengan benar dan menampilkan "Huruf: Backspace", yang secara otomatis menghapus huruf terakhir dari kalimat yang sedang dibuat.
 
- 
+![image](https://github.com/user-attachments/assets/21f0ca69-0d4f-4db3-b763-d86b37d4caf2)
+
 Pengenalan Huruf contoh :"Y" (Gambar 2)
 
 Pengguna memberikan gestur tangan untuk huruf "Y".
 Sistem berhasil mengenali huruf ini dan menambahkannya ke dalam kalimat ("Kalimat: VY").
 Sistem juga memberikan saran huruf lain seperti "BY" untuk memungkinkan koreksi jika prediksi tidak sesuai.
 
- 
+![image](https://github.com/user-attachments/assets/694b9267-b195-4b61-8722-23ff1e7b5e58)
+
 Next Functionality (Gambar 3)
 
 Sistem mendeteksi gestur tangan yang menandakan aksi "Next".
