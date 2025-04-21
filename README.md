@@ -7,7 +7,7 @@ Finite State Automata (FSA) dapat digunakan sebagai model dalam sistem deteksi g
 
 ## 2.	Analisis Kebutuhan dan Pengumpulan Data
 
-2.1	Analisis Kebutuhan
+### 2.1	Analisis Kebutuhan
 
 Dalam perancangan sistem deteksi gerakan tangan berbasis kamera, ada beberapa kebutuhan fungsional dan non-fungsional yang harus dipenuhi:
 
@@ -28,7 +28,7 @@ Kebutuhan Non-Fungsional:
 •	Antarmuka pengguna harus mudah dipahami dan dioperasikan.
 •	Sistem harus dirancang dengan efisiensi sumber daya, baik dalam hal memori maupun penggunaan CPU.
 
-2.2	Pengumpulan Data
+#### 2.2	Pengumpulan Data
 
 Untuk mengembangkan sistem ini, beberapa data dan perangkat lunak yang dibutuhkan meliputi:
 
@@ -37,9 +37,9 @@ Untuk mengembangkan sistem ini, beberapa data dan perangkat lunak yang dibutuhka
 o	MediaPipe Hands: Library ini menyediakan deteksi landmark tangan secara real- time menggunakan deep learning, yang cocok untuk pengembangan sistem ini.
 o	OpenCV: Digunakan untuk menangkap video dari kamera dan memproses frame secara langsung, termasuk membalik (flipping) frame untuk orientasi yang sesuai.
 
-3.	Studi Literatur
+## 3.	Studi Literatur
 
-3.1	Deteksi Gerakan Tangan dan Pendeteksian Landmark
+### 3.1	Deteksi Gerakan Tangan dan Pendeteksian Landmark
 
 Deteksi gerakan tangan dengan menggunakan landmark merupakan salah satu teknik utama dalam computer vision. Pendekatan ini sering menggunakan deep learning untuk mendeteksi posisi jari dan tangan dari gambar atau video. MediaPipe Hands adalah salah satu model deep learning yang telah dioptimalkan untuk pendeteksian landmark tangan secara real-time. Model
  
@@ -48,32 +48,32 @@ ini dapat mendeteksi hingga 21 landmark tangan dengan efisiensi tinggi, sehingga
 Referensi:
 John dan Sherif (2022), dalam penelitian mereka "Hand landmark-based sign language recognition using deep learning," membahas penggunaan deep learning untuk mendeteksi landmark tangan dan implementasinya dalam pengenalan gestur.
 
-3.2	Implementasi Sistem Real-Time untuk Pendeteksian Tangan
+### 3.2	Implementasi Sistem Real-Time untuk Pendeteksian Tangan
 
 Sistem real-time biasanya menggunakan OpenCV untuk menangkap dan memproses citra secara langsung. OpenCV merupakan library populer yang mendukung berbagai operasi citra, mulai dari menangkap frame hingga preprocessing seperti flipping atau cropping. Dalam pengembangan sistem deteksi gerakan tangan, OpenCV menjadi alat penting untuk mengolah data video dari kamera secara real-time.
 
 Referensi:
 Bradski (2000) menjelaskan dalam "The OpenCV Library" tentang peran penting OpenCV dalam pemrosesan gambar, khususnya dalam aplikasi deteksi gerakan tangan.
 
-3.3	Finite State Automata (FSA) dalam Pengenalan Gestur
+### 3.3	Finite State Automata (FSA) dalam Pengenalan Gestur
 
 Finite State Automata (FSA) sering digunakan dalam sistem pengenalan pola, termasuk pengenalan gestur. FSA memodelkan sistem sebagai kumpulan state yang dihubungkan oleh transisi, yang terjadi berdasarkan input yang diterima. Dalam sistem deteksi gerakan tangan, FSA dapat mengatur transisi dari deteksi landmark, pengenalan gestur, hingga penghentian proses ketika pengguna keluar.
 
 Referensi:
 Rabiner dan Juang (1986) dalam "An Introduction to Hidden Markov Models" menjelaskan bagaimana FSA dan model automata digunakan dalam pengenalan pola, yang dapat diterapkan dalam sistem pengenalan gestur.
  
-3.4	Aplikasi Pengenalan Gestur untuk Teknologi Assistive
+### 3.4	Aplikasi Pengenalan Gestur untuk Teknologi Assistive
 
 Pengenalan gestur berbasis deteksi gerakan tangan memiliki potensi besar dalam teknologi assistive, terutama dalam membantu penyandang disabilitas. Misalnya, penerjemah bahasa isyarat menggunakan deteksi gerakan tangan untuk mengenali simbol tangan yang kemudian diterjemahkan ke dalam teks atau suara, membantu individu dengan keterbatasan bicara atau pendengaran.
 
 Referensi:
 Nikam dan Ambekar (2016, November) dalam "Sign Language Recognition Using Image Based Hand Gesture Recognition" membahas bagaimana teknologi pengenalan gestur diterapkan dalam penerjemahan bahasa isyarat, yang berpotensi untuk diterapkan dalam berbagai teknologi assistive lainnya.
 
-4.	Perancangan dan Implementasi Finite State Automata(FSA) untuk Deteksi Gerakan Tangan
+## 4.	Perancangan dan Implementasi Finite State Automata(FSA) untuk Deteksi Gerakan Tangan
 
 Finite State Automata (FSA) bisa digunakan untuk memodelkan transisi antar proses dalam algoritma deteksi gestur tangan. Di sini, sistem mendeteksi jumlah jari yang terangkat dan mengenali gestur yang ditampilkan. Berikut adalah perancangan dan implementasi FSA untuk algoritma deteksi gestur tangan menggunakan Python.
 
-4.1	Definisi State
+### 4.1	Definisi State
 
 •	State Mulai: Kondisi awal ketika sistem diinisialisasi.
 •	State Inisialisasi Kamera: Sistem memulai kamera dan inisialisasi pendeteksi tangan.
@@ -88,7 +88,7 @@ Finite State Automata (FSA) bisa digunakan untuk memodelkan transisi antar prose
 •	State Tutup Kamera & Window: Sistem menutup kamera dan menutup jendela tampilan setelah selesai.
 •	State Selesai: Sistem berhenti dan keluar.
 
-4.2	Transisi Antar State
+### 4.2	Transisi Antar State
 
 •	Mulai ke Inisialisasi Kamera: Terjadi ketika sistem dimulai dan kamera serta pendeteksi tangan diinisialisasi.
 •	Inisialisasi Kamera ke Tangkap Frame: Setelah inisialisasi selesai, sistem mulai menangkap frame dari kamera.
@@ -103,7 +103,7 @@ Finite State Automata (FSA) bisa digunakan untuk memodelkan transisi antar prose
  
 
 
-4.3	Implementasi FSA
+### 4.3	Implementasi FSA
 
 Berikut adalah representasi visual dari FSA untuk sistem deteksi gerakan tangan: Dalam bentuk Flowchart:
 
@@ -151,26 +151,30 @@ o	Setelah semua proses selesai, sistem masuk ke Selesai.
 11.	Selesai:
 o	Sistem berhenti dan keluar.
 
-Pendekatan Klasifikasi Berbasis Kelompok untuk Peningkatan Akurasi
+## Pendekatan Klasifikasi Berbasis Kelompok untuk Peningkatan Akurasi
 Dalam pengembangan sistem pengenalan bahasa isyarat tangan, tantangan utama adalah akurasi rendah saat mengklasifikasikan 26 kelas alfabet yang berbeda sekaligus. Untuk mengatasi masalah ini, kami mengimplementasikan strategi pengelompokan alfabet berdasarkan kemiripan bentuk atau pola isyarat tangan.
 Pembagian Kelas Alfabet
 Seluruh alfabet [a-z] dibagi ke dalam 8 kelas utama, di mana setiap kelas berisi alfabet yang memiliki pola isyarat tangan serupa. Berikut adalah rincian pembagian kelas:
 1.	[y, j]
+   
  ![image](https://github.com/user-attachments/assets/b90e5cc3-830f-41cd-ba68-8d339256eba7)
 
 Gamabar 1:
 o	Alfabet ini memiliki kemiripan pola dengan isyarat menggunakan ibu jari dan jari kelingking.
 2.	[c, o]
+
  ![image](https://github.com/user-attachments/assets/f46a1034-9ac9-4091-9f1a-308bfa865ac1)
 
 Gambar 2:
 o	Alfabet ini memiliki pola melingkar pada gestur tangan.
 3.	[g, h]
+
  ![image](https://github.com/user-attachments/assets/a3257b70-15be-46f8-93de-9b1004cc82da)
 
 Gambar 3:
 o	Isyarat tangan untuk alfabet ini melibatkan posisi jari telunjuk dan jari tengah yang menyerupai garis lurus.
 4.	[b, d, f, i, u, v, k, r, w]
+
  ![image](https://github.com/user-attachments/assets/e278e493-54bc-448c-b4c5-10c3ac398f0a)
 
 Gambar 4:
@@ -185,7 +189,8 @@ o	Isyarat tangan dalam kelas ini umumnya melibatkan jari-jari membentuk pola len
 
 Gambar 6:
 o	Kelas ini terdiri dari alfabet dengan pola tangan yang lebih kompleks tetapi memiliki fitur serupa, seperti posisi jari tertutup.
-Proses Prediksi dan Klasifikasi
+
+## Proses Prediksi dan Klasifikasi
 1. Klasifikasi Awal (Kelompok Besar):
 •	Model CNN digunakan untuk mengklasifikasikan gestur tangan ke salah satu dari 8 kelas utama.
 •	Prediksi dilakukan berdasarkan probabilitas tertinggi yang dihasilkan oleh model.
@@ -201,7 +206,9 @@ o	Mengelompokkan alfabet yang mirip mempermudah model dalam mengenali pola.
 o	Klasifikasi lanjutan menggunakan operasi matematis meningkatkan presisi prediksi alfabet spesifik.
 3.	Skalabilitas:
 Strategi ini memungkinkan integrasi lebih mudah dengan fitur atau bahasa isyarat lainnya, karena model hanya perlu menyesuaikan kelompok besar tanpa perlu merancang ulang seluruh sistem.
+
 Fungsi dan Hasil Implementasi
+
 ![image](https://github.com/user-attachments/assets/a46887fc-5576-40f7-8b48-a7b1ebc3340e)
 
 Backspace Functionality (Gambar 1)
