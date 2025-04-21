@@ -1,7 +1,7 @@
 
 
 
-Abstrak
+#Abstrak
 
 Bahasa isyarat merupakan metode komunikasi yang sangat penting bagi komunitas tunarungu dan tunawicara. Dengan kemajuan teknologi dalam bidang computer vision dan machine learning, telah muncul potensi untuk mengembangkan sistem penerjemah bahasa isyarat secara real-time menggunakan sensor kamera. Artikel ini mengeksplorasi penggunaan Python untuk menerjemahkan gerakan jari dalam bahasa isyarat melalui sensor kamera, dengan berfokus pada analisis kebutuhan, pengumpulan data, studi literatur, serta implementasi Finite State Automata (FSA). Pada analisis kebutuhan, perangkat keras, perangkat lunak, dan dataset diidentifikasi untuk membangun sistem. Studi literatur membahas teknik pengolahan citra, metode klasifikasi, serta teknik pengenalan gerakan yang relevan dengan bahasa isyarat. Artikel ini juga mengusulkan rancangan FSA untuk memodelkan transisi antar gerakan dalam sistem penerjemah bahasa isyarat.
 Kata-kata Kunci: Bahasa isyarat, computer vision, machine learning, Python, sensor kamera
