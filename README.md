@@ -351,7 +351,4 @@ Dengan struktur modular:
 
 Proyek ini bisa dikembangkan lebih lanjut ke bahasa isyarat penuh, voice output, atau penerjemahan kalimat penuh. Cocok untuk digunakan dalam pendidikan, inklusi disabilitas, dan komunikasi.
 
----
-
-> Untuk dokumentasi lebih mendetail tiap file, kamu bisa buat README terpisah atau dokumentasi inline (komentar dalam kode).
 
